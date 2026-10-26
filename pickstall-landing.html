@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pickstall – your whole creator shop, one link</title>
+<meta name="description" content="Pickstall is the all-in-one store for course creators. Sell courses, calls and downloads, run email and funnels, all on one low-priced plan. Join the waitlist.">
+<meta property="og:title" content="Pickstall – your whole creator shop, one link">
+<meta property="og:description" content="The all-in-one store for course creators. Join the waitlist.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%233347FF'/%3E%3Cpath d='M18 50V14h16a13 13 0 010 26H28' stroke='%23fff' stroke-width='8' fill='none' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1A1B3A; --blue:#3347FF; --paper:#F7F6FF; --sun:#FFC83D; --mint:#6FF0C0; --pink:#FF7BA8;
+  --display:'Bricolage Grotesque','Trebuchet MS',system-ui,sans-serif;
+  --body:'DM Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --stripe:56px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:16px}
+body{font-family:var(--body);color:var(--ink);background:var(--paper);line-height:1.6;font-size:1.0625rem;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:6px}
+.wrap{width:min(1120px,100% - 40px);margin-inline:auto}
+h1,h2,h3{font-family:var(--display);line-height:1.04;letter-spacing:-.03em;font-weight:800}
+
+/* nav */
+.nav{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+.logo{font-family:var(--display);font-weight:800;font-size:1.6rem;letter-spacing:-.04em;text-decoration:none;display:flex;align-items:center;gap:10px}
+.logo i{width:34px;height:34px;border-radius:10px;background:var(--blue);display:grid;place-items:center;color:#fff;font-style:normal;font-size:1.2rem}
+.btn{display:inline-block;font-family:var(--display);font-weight:700;font-size:1rem;text-decoration:none;padding:12px 22px;border:2px solid var(--ink);border-radius:999px;background:var(--sun);color:var(--ink);box-shadow:3px 3px 0 var(--ink);transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translate(-1px,-1px);box-shadow:5px 5px 0 var(--ink)}
+.btn:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
+
+/* awning */
+.awning{transform-origin:top;animation:drop 1s cubic-bezier(.2,1.3,.4,1) both}
+.awning b{display:block;background:repeating-linear-gradient(90deg,var(--blue) 0 var(--stripe),#fff var(--stripe) calc(var(--stripe)*2))}
+.awning b:first-child{height:44px;border-top:3px solid var(--ink)}
+.awning b:last-child{height:28px;-webkit-mask:radial-gradient(28px 28px at 50% 0,#000 97%,#0000) 0 0/var(--stripe) 28px repeat-x;mask:radial-gradient(28px 28px at 50% 0,#000 97%,#0000) 0 0/var(--stripe) 28px repeat-x}
+@keyframes drop{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+
+/* hero */
+.hero{padding:44px 0 90px}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+h1{font-size:clamp(2.6rem,5.4vw,4.6rem);max-width:9em}
+.lede{max-width:34em;margin:22px 0 30px;font-size:1.2rem}
+.join{background:#fff;border:2px solid var(--ink);border-radius:20px;padding:22px;box-shadow:7px 7px 0 var(--ink);max-width:480px}
+.join h2{font-size:1.5rem;margin-bottom:4px}
+.join p{font-size:.95rem;margin-bottom:14px;opacity:.8}
+.join [data-launchlist-form]{min-height:64px}
+.wl-note{font-size:.92rem;padding:12px 14px;border:2px dashed var(--ink);border-radius:12px;background:var(--paper)}
+.wl-note[hidden]{display:none}
+.toast{position:absolute;bottom:70px;left:-34px;background:var(--mint);border:2px solid var(--ink);border-radius:12px;padding:8px 12px;font-family:var(--display);font-weight:800;font-size:.9rem;box-shadow:3px 3px 0 var(--ink);animation:pop .5s 1.6s cubic-bezier(.2,1.5,.4,1) both;z-index:2}
+.phoneWrap{position:relative}
+.url{margin-top:16px;font-size:.95rem}
+.url code{font-family:var(--display);font-weight:700;background:var(--mint);padding:3px 10px;border-radius:8px;border:2px solid var(--ink)}
+
+/* phone */
+.stage{display:flex;flex-direction:column;align-items:center;gap:22px}
+.phone{width:min(310px,100%);background:#fff;border:10px solid var(--ink);border-radius:42px;padding:22px 16px;box-shadow:14px 14px 0 var(--blue);transform:rotate(3deg);min-height:470px}
+.who{text-align:center;margin-bottom:16px}
+.av{width:62px;height:62px;border-radius:50%;background:var(--pink);border:3px solid var(--ink);margin:0 auto 8px;display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:1.5rem}
+.who strong{font-family:var(--display);font-size:1.1rem;display:block}
+.who span{font-size:.85rem;opacity:.7}
+.tile{display:flex;align-items:center;gap:12px;padding:11px;border:2px solid var(--ink);border-radius:14px;margin-bottom:10px;animation:pop .45s cubic-bezier(.2,1.5,.4,1) both}
+.tile .ic{width:38px;height:38px;border-radius:10px;border:2px solid var(--ink);flex:none}
+.tile div{flex:1;line-height:1.25}
+.tile b{display:block;font-size:.92rem}
+.tile small{font-size:.76rem;opacity:.7}
+.tile em{font-style:normal;font-family:var(--display);font-weight:800;font-size:.95rem}
+@keyframes pop{from{transform:scale(.7);opacity:0}to{transform:none;opacity:1}}
+.chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.chip{font:700 .88rem var(--body);padding:7px 14px;border:2px solid var(--ink);border-radius:999px;background:#fff;color:var(--ink);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--sun)}
+.chip:hover{transform:translateY(-1px)}
+.cap{font-size:.88rem;opacity:.7}
+
+/* shelves */
+.shelves{background:var(--ink);color:var(--paper);padding:90px 0}
+.shelves h2{font-size:clamp(2rem,4.4vw,3.4rem);max-width:15em}
+.shelves .sub{max-width:36em;margin:16px 0 50px;opacity:.8}
+.shelf{margin-bottom:46px}
+.shelf h3{font-size:1.25rem;margin-bottom:16px}
+.row{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;align-items:stretch;padding-bottom:18px;border-bottom:14px solid var(--paper);border-radius:0 0 6px 6px}
+.tag{padding:18px 18px 20px;border-radius:16px 16px 6px 6px;color:var(--ink);position:relative}
+.tag::before{content:"";position:absolute;top:10px;right:12px;width:10px;height:10px;border-radius:50%;background:var(--ink);opacity:.85}
+.tag h4{font-family:var(--display);font-size:1.15rem;margin-bottom:4px;padding-right:18px;letter-spacing:-.02em}
+.tag p{font-size:.92rem;line-height:1.45}
+.row.live .tag:nth-child(4n+1){background:var(--sun)}
+.row.live .tag:nth-child(4n+2){background:var(--mint)}
+.row.live .tag:nth-child(4n+3){background:var(--pink)}
+.row.live .tag:nth-child(4n){background:var(--paper)}
+.row.soon{grid-template-columns:repeat(3,1fr)}
+.row.soon .tag{background:transparent;color:var(--paper);border:2px dashed rgba(247,246,255,.55)}
+.row.soon .tag::before{background:transparent;border:2px solid var(--paper)}
+
+/* promise */
+.promise{background:var(--sun);border-block:3px solid var(--ink);padding:70px 0}
+.promise p{font-family:var(--display);font-weight:800;font-size:clamp(1.8rem,4.6vw,3.6rem);line-height:1.08;letter-spacing:-.03em;max-width:19em}
+
+/* switching */
+.move{padding:90px 0}
+.move .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.move h2{font-size:clamp(2rem,4.2vw,3.2rem);margin-bottom:16px}
+.crate{background:#fff;border:2px solid var(--ink);border-radius:20px;padding:24px;box-shadow:7px 7px 0 var(--pink)}
+.crate h3{font-size:1.2rem;margin-bottom:14px}
+.crate li{list-style:none;display:flex;gap:12px;padding:11px 0;border-top:2px solid var(--ink)}
+.crate li:first-of-type{border-top:0}
+.crate li::before{content:"";flex:none;width:22px;height:22px;margin-top:3px;border-radius:50%;background:var(--mint) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 12.5l4 4 8-9' fill='none' stroke='%231A1B3A' stroke-width='3'/%3E%3C/svg%3E") center/16px no-repeat;border:2px solid var(--ink)}
+
+/* faq */
+.faq{padding:0 0 90px}
+.faq h2{font-size:clamp(2rem,4vw,3rem);margin-bottom:26px}
+details{border-top:2px solid var(--ink);padding:18px 0}
+details:last-of-type{border-bottom:2px solid var(--ink)}
+summary{font-family:var(--display);font-weight:700;font-size:1.25rem;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:20px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:1.6rem;line-height:1;transition:transform .2s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{margin-top:10px;max-width:42em;opacity:.85}
+
+/* closing */
+.close{background:var(--blue);color:#fff;padding:80px 0;text-align:left}
+.close h2{font-size:clamp(2.2rem,5.4vw,4.4rem);max-width:12em;margin-bottom:26px}
+footer{padding:26px 0;font-size:.9rem}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+@media (max-width:860px){
+  .row.soon{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+  .hero .wrap,.move .wrap{grid-template-columns:1fr;gap:44px}
+  .phone{transform:none}
+  .hero{padding-bottom:60px}
+  .shelves,.move{padding:64px 0}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .awning,.tile{animation:none}
+  *{transition:none!important}
+}
+</style>
+</head>
+<body>
+
+<header class="wrap nav">
+  <a class="logo" href="#top" aria-label="Pickstall home"><i>P</i>Pickstall</a>
+  <a class="btn" href="#join">Join the waitlist</a>
+</header>
+<div class="awning" aria-hidden="true"><b></b><b></b></div>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Your whole creator shop, one link.</h1>
+      <p class="lede">Pickstall is the all-in-one store for course creators. Sell courses, coaching calls and downloads, run your email and funnels, and stop paying for five different tools.</p>
+
+      <div class="join" id="join">
+        <h2>Join the waitlist</h2>
+        <p>We’ll email you the day Pickstall opens.</p>
+        <div data-launchlist-form="frm_p6m58khyhsz2"></div>
+        <p class="wl-note" id="wlNote">Loading the waitlist form…</p>
+      </div>
+      <p class="url">Your store will live at <code>pickstall.store/@yourname</code></p>
+    </div>
+
+    <div class="stage">
+      <div class="phoneWrap"><div class="toast" aria-hidden="true">New sale: $89</div>
+      <div class="phone" aria-label="Example Pickstall store">
+        <div class="who">
+          <div class="av">M</div>
+          <strong>@maya</strong>
+          <span>Teaching podcasters to launch</span>
+        </div>
+        <div id="tiles"></div>
+      </div></div>
+      <div class="chips" role="group" aria-label="Add products to the example store">
+        <button class="chip" data-k="course" aria-pressed="true">Course</button>
+        <button class="chip" data-k="call" aria-pressed="false">1:1 call</button>
+        <button class="chip" data-k="ebook" aria-pressed="true">Ebook</button>
+        <button class="chip" data-k="member" aria-pressed="false">Membership</button>
+        <button class="chip" data-k="list" aria-pressed="false">Free checklist</button>
+      </div>
+      <p class="cap">Tap to stock the store.</p>
+    </div>
+  </div>
+</section>
+
+<section class="shelves">
+  <div class="wrap">
+    <h2>Everything a creator sells with, in one place.</h2>
+    <p class="sub">No separate website, checkout page, email tool and funnel builder. Here’s what’s on the shelf, and what’s still arriving.</p>
+
+    <div class="shelf">
+      <h3>On the shelf at launch</h3>
+      <div class="row live">
+        <div class="tag"><h4>Your store page</h4><p>One clean link for every product, with your own button text and layout.</p></div>
+        <div class="tag"><h4>Fast checkout</h4><p>Collect the details you need from buyers. They show up in your customer panel.</p></div>
+        <div class="tag"><h4>Stripe payouts</h4><p>Get paid straight to your account through Stripe Connect.</p></div>
+        <div class="tag"><h4>Buyer library</h4><p>Every purchase lives in one place, with secure downloads.</p></div>
+        <div class="tag"><h4>Order emails</h4><p>Receipts and delivery emails go out automatically.</p></div>
+      </div>
+    </div>
+
+    <div class="shelf">
+      <h3>Arriving soon</h3>
+      <div class="row soon">
+        <div class="tag"><h4>Email marketing</h4><p>Newsletters and sequences to your own list.</p></div>
+        <div class="tag"><h4>Discounts and bumps</h4><p>Discount codes, order bumps and payment plans.</p></div>
+        <div class="tag"><h4>Funnels</h4><p>Lead magnet to sale, built right inside your store.</p></div>
+        <div class="tag"><h4>Affiliates and pixels</h4><p>Let fans sell for you, and track every ad dollar.</p></div>
+        <div class="tag"><h4>Custom domain</h4><p>Put your store on your own web address.</p></div>
+        <div class="tag"><h4>More ways to get paid</h4><p>Extra payment methods for creators outside the US.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="promise">
+  <div class="wrap">
+    <p>Other builders lock their best tools behind the top plan. Pickstall puts them all on one low-priced plan.</p>
+  </div>
+</section>
+
+<section class="move">
+  <div class="wrap">
+    <div>
+      <h2>Already selling somewhere else? Bring your shop with you.</h2>
+      <p>We’re building import tools for Stan Store and Gumroad, so switching doesn’t mean starting over.</p>
+    </div>
+    <div class="crate">
+      <h3>What moves in the box</h3>
+      <ul>
+        <li>Your products, with their titles, descriptions and prices</li>
+        <li>Your customer list, so buyers keep their access</li>
+        <li>Your store link, set up the way you like it</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="wrap">
+    <h2>Questions before you join</h2>
+    <details><summary>When does Pickstall open?</summary><p>We’re building it now. Everyone on the waitlist gets an email the day it opens.</p></details>
+    <details><summary>How do I get paid?</summary><p>Through Stripe Connect, straight to your own account. More payment options for creators in other countries are planned.</p></details>
+    <details><summary>Can I use my own domain?</summary><p>Custom domains are coming. Until then, your store lives at pickstall.store/@username.</p></details>
+    <details><summary>Who is Pickstall for?</summary><p>Course creators and coaches who sell online and want one tool instead of a stack of them.</p></details>
+  </div>
+</section>
+
+<section class="close">
+  <div class="wrap">
+    <h2>Your stall is waiting.</h2>
+    <a class="btn" href="#join">Join the waitlist</a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap"><span>© 2026 Pickstall</span><span>pickstall.store</span></div>
+</footer>
+
+<script>
+(function(){
+  var data={
+    course:{c:'#FFC83D',n:'Launch Your Podcast',s:'Video course',p:'$89'},
+    call:{c:'#6FF0C0',n:'1:1 strategy call',s:'60 minutes',p:'$150'},
+    ebook:{c:'#FF7BA8',n:'Notion templates',s:'Instant download',p:'$19'},
+    member:{c:'#B9C2FF',n:'Inner circle',s:'Monthly membership',p:'$29/mo'},
+    list:{c:'#FFFFFF',n:'Episode planner',s:'Free checklist',p:'Free'}
+  };
+  var order=['course','call','ebook','member','list'];
+  var box=document.getElementById('tiles');
+  var chips=document.querySelectorAll('.chip');
+  var on={course:true,ebook:true};
+
+  function render(newKey){
+    box.innerHTML='';
+    order.forEach(function(k){
+      if(!on[k])return;
+      var d=data[k],t=document.createElement('div');
+      t.className='tile';
+      t.style.background=d.c==='#FFFFFF'?'#fff':d.c+'55';
+      if(k!==newKey)t.style.animation='none';
+      t.innerHTML='<span class="ic" style="background:'+d.c+'"></span><div><b>'+d.n+'</b><small>'+d.s+'</small></div><em>'+d.p+'</em>';
+      box.appendChild(t);
+    });
+  }
+  chips.forEach(function(c){
+    c.addEventListener('click',function(){
+      var k=c.getAttribute('data-k');
+      on[k]=!on[k];
+      c.setAttribute('aria-pressed',on[k]?'true':'false');
+      render(on[k]?k:null);
+    });
+  });
+  render(null);
+  box.querySelectorAll('.tile').forEach(function(t,i){t.style.animation='';t.style.animationDelay=(0.9+i*0.15)+'s'});
+})();
+</script>
+
+<!-- GetLaunchList embed: loaded after the page is ready, with a visible fallback if it is blocked -->
+<script>
+(function(){
+  var note=document.getElementById('wlNote'),slot=document.querySelector('[data-launchlist-form]');
+  function loaded(){return slot&&slot.children.length>0}
+  function load(){
+    var sc=document.createElement('script');
+    sc.src='https://embed.getlaunchlist.com/v1/embed.js';
+    sc.async=true;
+    sc.onerror=function(){fail()};
+    document.body.appendChild(sc);
+  }
+  function fail(){
+    if(loaded())return;
+    note.hidden=false;
+    note.textContent='The waitlist form could not load. Open this page from your live website (not as a local file or preview), turn off any ad blocker, and refresh.';
+  }
+  var t=setInterval(function(){if(loaded()){note.hidden=true;clearInterval(t)}},300);
+  setTimeout(function(){clearInterval(t);fail()},7000);
+  if(document.readyState==='complete')load();else window.addEventListener('load',load);
+})();
+</script>
+</body>
+</html>
