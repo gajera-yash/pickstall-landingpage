@@ -50,8 +50,6 @@ h1{font-size:clamp(2.6rem,5.4vw,4.6rem);max-width:9em}
 .join h2{font-size:1.5rem;margin-bottom:4px}
 .join p{font-size:.95rem;margin-bottom:14px;opacity:.8}
 .join [data-launchlist-form]{min-height:64px}
-.wl-note{font-size:.92rem;padding:12px 14px;border:2px dashed var(--ink);border-radius:12px;background:var(--paper)}
-.wl-note[hidden]{display:none}
 .toast{position:absolute;bottom:70px;left:-34px;background:var(--mint);border:2px solid var(--ink);border-radius:12px;padding:8px 12px;font-family:var(--display);font-weight:800;font-size:.9rem;box-shadow:3px 3px 0 var(--ink);animation:pop .5s 1.6s cubic-bezier(.2,1.5,.4,1) both;z-index:2}
 .phoneWrap{position:relative}
 .url{margin-top:16px;font-size:.95rem}
@@ -160,7 +158,6 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
         <h2>Join the waitlist</h2>
         <p>We’ll email you the day Pickstall opens.</p>
         <div data-launchlist-form="frm_p6m58khyhsz2"></div>
-        <p class="wl-note" id="wlNote">Loading the waitlist form…</p>
       </div>
       <p class="url">Your store will live at <code>pickstall.store/@yourname</code></p>
     </div>
@@ -301,27 +298,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 })();
 </script>
 
-<!-- GetLaunchList embed: loaded after the page is ready, with a visible fallback if it is blocked -->
-<script>
-(function(){
-  var note=document.getElementById('wlNote'),slot=document.querySelector('[data-launchlist-form]');
-  function loaded(){return slot&&slot.children.length>0}
-  function load(){
-    var sc=document.createElement('script');
-    sc.src='https://embed.getlaunchlist.com/v1/embed.js';
-    sc.async=true;
-    sc.onerror=function(){fail()};
-    document.body.appendChild(sc);
-  }
-  function fail(){
-    if(loaded())return;
-    note.hidden=false;
-    note.textContent='The waitlist form could not load. Open this page from your live website (not as a local file or preview), turn off any ad blocker, and refresh.';
-  }
-  var t=setInterval(function(){if(loaded()){note.hidden=true;clearInterval(t)}},300);
-  setTimeout(function(){clearInterval(t);fail()},7000);
-  if(document.readyState==='complete')load();else window.addEventListener('load',load);
-})();
-</script>
+<!-- GetLaunchList embed -->
+<script src="https://embed.getlaunchlist.com/v1/embed.js" defer></script>
 </body>
 </html>
