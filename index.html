@@ -7,7 +7,8 @@
 <meta name="description" content="Pickstall is the all-in-one store for course creators. Sell courses, calls and downloads, run email and funnels, all on one low-priced plan. Join the waitlist.">
 <meta property="og:title" content="Pickstall – your whole creator shop, one link">
 <meta property="og:description" content="The all-in-one store for course creators. Join the waitlist.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%233347FF'/%3E%3Cpath d='M18 50V14h16a13 13 0 010 26H28' stroke='%23fff' stroke-width='8' fill='none' stroke-linejoin='round'/%3E%3C/svg%3E">
+<meta property="og:image" content="logo.png">
+<link rel="icon" type="image/png" href="logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
@@ -27,9 +28,11 @@ a{color:inherit}
 h1,h2,h3{font-family:var(--display);line-height:1.04;letter-spacing:-.03em;font-weight:800}
 
 /* nav */
-.nav{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
-.logo{font-family:var(--display);font-weight:800;font-size:1.6rem;letter-spacing:-.04em;text-decoration:none;display:flex;align-items:center;gap:10px}
-.logo i{width:34px;height:34px;border-radius:10px;background:var(--blue);display:grid;place-items:center;color:#fff;font-style:normal;font-size:1.2rem}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
+.logo{display:inline-flex;align-items:center;text-decoration:none;transition:transform .15s}
+.logo:hover{transform:scale(1.02)}
+.logo-img{height:46px;width:auto;display:block;object-fit:contain}
+@media (max-width:560px){.logo-img{height:38px}}
 .btn{display:inline-block;font-family:var(--display);font-weight:700;font-size:1rem;text-decoration:none;padding:12px 22px;border:2px solid var(--ink);border-radius:999px;background:var(--sun);color:var(--ink);box-shadow:3px 3px 0 var(--ink);transition:transform .15s,box-shadow .15s}
 .btn:hover{transform:translate(-1px,-1px);box-shadow:5px 5px 0 var(--ink)}
 .btn:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
@@ -44,9 +47,14 @@ h1,h2,h3{font-family:var(--display);line-height:1.04;letter-spacing:-.03em;font-
 /* hero */
 .hero{padding:44px 0 90px}
 .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.pill-badge{display:inline-flex;align-items:center;gap:8px;background:#fff;border:2px solid var(--ink);border-radius:999px;padding:6px 14px;font-size:.875rem;font-weight:500;box-shadow:3px 3px 0 var(--ink);margin-bottom:18px}
+.pill-badge strong{color:var(--blue);font-family:var(--display);font-weight:800}
+.pill-dot{width:8px;height:8px;border-radius:50%;background:var(--pink);display:inline-block;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.25)}}
 h1{font-size:clamp(2.6rem,5.4vw,4.6rem);max-width:9em}
 .lede{max-width:34em;margin:22px 0 30px;font-size:1.2rem}
 .join{background:#fff;border:2px solid var(--ink);border-radius:20px;padding:22px;box-shadow:7px 7px 0 var(--ink);max-width:480px}
+.perk-tag{display:inline-block;background:var(--sun);border:2px solid var(--ink);border-radius:8px;padding:4px 10px;font-family:var(--display);font-weight:800;font-size:.82rem;margin-bottom:12px;box-shadow:2px 2px 0 var(--ink)}
 .join h2{font-size:1.5rem;margin-bottom:4px}
 .join p{font-size:.95rem;margin-bottom:14px;opacity:.8}
 .join [data-launchlist-form]{min-height:64px}
@@ -123,7 +131,10 @@ details p{margin-top:10px;max-width:42em;opacity:.85}
 .close{background:var(--blue);color:#fff;padding:80px 0;text-align:left}
 .close h2{font-size:clamp(2.2rem,5.4vw,4.4rem);max-width:12em;margin-bottom:26px}
 footer{padding:26px 0;font-size:.9rem}
-footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.foot-links{display:flex;gap:16px}
+.foot-links a{color:var(--ink);text-decoration:underline;text-underline-offset:3px;opacity:.8;transition:opacity .15s}
+.foot-links a:hover{opacity:1;color:var(--blue)}
 
 @media (max-width:860px){
   .row.soon{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
@@ -142,7 +153,9 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 <body>
 
 <header class="wrap nav">
-  <a class="logo" href="#top" aria-label="Pickstall home"><i>P</i>Pickstall</a>
+  <a class="logo" href="#top" aria-label="Pickstall home">
+    <img src="logo.png" alt="Pickstall" class="logo-img">
+  </a>
   <a class="btn" href="#join">Join the waitlist</a>
 </header>
 <div class="awning" aria-hidden="true"><b></b><b></b></div>
@@ -151,12 +164,17 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 <section class="hero">
   <div class="wrap">
     <div>
+      <div class="pill-badge">
+        <span class="pill-dot" aria-hidden="true"></span>
+        <strong>Early Access:</strong> First 50 creators get early pre-launch access
+      </div>
       <h1>Your whole creator shop, one link.</h1>
       <p class="lede">Pickstall is the all-in-one store for course creators. Sell courses, coaching calls and downloads, run your email and funnels, and stop paying for five different tools.</p>
 
       <div class="join" id="join">
+        <span class="perk-tag">⚡ First 50 users get early pre-launch access</span>
         <h2>Join the waitlist</h2>
-        <p>We’ll email you the day Pickstall opens.</p>
+        <p>Be the first to know. The first 50 signups receive exclusive early pre-launch access.</p>
         <div data-launchlist-form="frm_p6m58khyhsz2"></div>
       </div>
       <p class="url">Your store will live at <code>pickstall.store/@yourname</code></p>
@@ -240,7 +258,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 <section class="faq">
   <div class="wrap">
     <h2>Questions before you join</h2>
-    <details><summary>When does Pickstall open?</summary><p>We’re building it now. Everyone on the waitlist gets an email the day it opens.</p></details>
+    <details><summary>When does Pickstall open?</summary><p>We’re building it now. The first 50 creators on the waitlist get exclusive early pre-launch access, and everyone else will be invited on public launch day.</p></details>
     <details><summary>How do I get paid?</summary><p>Through Stripe Connect, straight to your own account. More payment options for creators in other countries are planned.</p></details>
     <details><summary>Can I use my own domain?</summary><p>Custom domains are coming. Until then, your store lives at pickstall.store/@username.</p></details>
     <details><summary>Who is Pickstall for?</summary><p>Course creators and coaches who sell online and want one tool instead of a stack of them.</p></details>
@@ -256,7 +274,14 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 </main>
 
 <footer>
-  <div class="wrap"><span>© 2026 Pickstall</span><span>pickstall.store</span></div>
+  <div class="wrap">
+    <span>© 2026 Pickstall</span>
+    <div class="foot-links">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+    </div>
+    <span>pickstall.store</span>
+  </div>
 </footer>
 
 <script>
